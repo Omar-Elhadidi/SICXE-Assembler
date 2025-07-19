@@ -27,6 +27,7 @@ This project implements a **two-pass assembler** for the **SIC/XE architecture**
 3. **Pass 2**:
    - Uses the symbol table to generate object code.
    - Formats object code as HTME (Header, Text, Modification, End).
+4. Final outputs are saved in the `output/` directory.
 
 ---
 
