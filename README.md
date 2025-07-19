@@ -1,41 +1,42 @@
 # SIC/XE Assembler
 
-This project implements a **two-pass assembler** for the **SIC/XE architecture**, written in Python. It reads a SIC/XE assembly program, removes comments, builds a symbol table, generates object code, and outputs HTME-formatted machine code.
+This project implements a two-pass assembler for the SIC/XE architecture. It takes an assembly program written in SIC/XE format and generates object code and HTME records.
 
----
+## 🧠 Features
 
-## 📁 Project Structure
+- Full support for Pass 1 and Pass 2 of assembly
+- Symbol table generation
+- Object code generation for formats 1, 2, 3, 4
+- Extended (4-byte) instruction handling
+- Custom pseudo-instructions (e.g., PADD, PMOV)
+- HTME record generation
 
+## 📁 Input
 
-| Name          | Description |
-|---------------|-------------|
-| `assembler.py`| Main assembler script |
-| `in.txt`      | Sample SIC/XE assembly program (input file) |
-| `output/`     | Generated files from assembler execution |
-| `README.md`   | This documentation file |
+Place your SIC/XE assembly program in `in.txt`.
 
+The program should include:
+- Comments and line numbers (which are stripped during preprocessing)
+- Standard SIC/XE instructions and directives
 
----
+## 🧪 Output Files
 
-## 🚀 How It Works
+Running the assembler will generate:
 
-1. `in.txt`: Input file containing SIC/XE assembly code.
-2. **Pass 1**:
-   - Cleans input file.
-   - Generates location counters.
-   - Builds the symbol table.
-3. **Pass 2**:
-   - Uses the symbol table to generate object code.
-   - Formats object code as HTME (Header, Text, Modification, End).
-4. Final outputs are saved in the `output/` directory.
+| File Name         | Description                                      |
+|------------------|--------------------------------------------------|
+| `intermediate.txt` | Cleaned assembly instructions without comments or line numbers |
+| `out_pass1.txt`    | Location counter per line (Pass 1 output)       |
+| `symbTable.txt`    | Generated symbol table                           |
+| `out_pass2.txt`    | Object code per line (Pass 2 output)            |
+| `HTME.txt`         | Final object program in HTME record format      |
 
----
+## 🚀 How to Run
 
-## ▶️ Running the Project
-
-1. Make sure you have Python 3 installed.
-2. Place your SIC/XE assembly code in `in.txt`.
-3. Run the assembler:
+1. Make sure you have Python installed.
+2. Clone or download this repository.
+3. Place your input file as `in.txt` in the same folder.
+4. Run the assembler:
 
 ```bash
-python assembler.py
+python3 assembler.py
