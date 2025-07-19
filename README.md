@@ -1,6 +1,7 @@
 # SIC/XE Assembler
 
-This project implements a two-pass assembler for the SIC/XE architecture. It takes an assembly program written in SIC/XE format and generates object code and HTME records.
+This project implements a **two-pass assembler** for the **SIC/XE architecture**, written in Python. It reads a SIC/XE assembly program, removes comments, builds a symbol table, generates object code, and outputs HTME-formatted machine code.
+
 
 ## 🧠 Features
 
